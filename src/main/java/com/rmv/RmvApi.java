@@ -83,7 +83,7 @@ public class RmvApi {
             return new JSONObject().put("error", "Keine Verbindung zwischen den angegebenen Haltestellen gefunden.").toString();
         }
 
-        // --- JSON-Erstellung beginnt hier ---
+        // JSON-Erstellung
 
         JSONObject resultJson = new JSONObject();
         JSONArray legsJsonArray = new JSONArray();
@@ -114,7 +114,7 @@ public class RmvApi {
             if (leg.getString("type").equals("WALK")) {
                 legJson.put("type", "WALK");
 
-                // KORREKTUR: Dauer aus "PT5M" extrahieren
+                // Dauer aus "PT5M" extrahieren
                 String durationStr = leg.getString("duration");
                 int durationMinutes = 0;
                 try {
