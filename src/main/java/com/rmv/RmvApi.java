@@ -59,6 +59,8 @@ public class RmvApi {
     public static String findTrip(String originId, String destinationId, String time) throws IOException, InterruptedException {
         String requestUri = null;
 
+        // Req. an die RMV-Api
+
         if (originId == null || destinationId == null || time == null) {
             requestUri = TRIP_URL + "?accessId=" + API_KEY + "&format=json&originExtId=" + originId + "&destExtId=" + destinationId;
         } else {
